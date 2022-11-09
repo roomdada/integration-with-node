@@ -21,4 +21,8 @@ app.get('/utilisateurs', (req, res) => {
   res.render('pages/users');
 });
 
+app.get('/parametres', (req, res) => {
+  res.render('pages/settings');
+});
+
 app.listen(3000);
