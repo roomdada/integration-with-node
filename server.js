@@ -9,9 +9,16 @@ app.get('/', (req, res) => {
   res.render('pages/login');
 });
 
-
 app.get('/dashboard', (req, res) => {
   res.render('pages/index');
+});
+
+app.get('/proprietaires', (req, res) => {
+  res.render('pages/list-house-owner');
+});
+
+app.get('/utilisateurs', (req, res) => {
+  res.render('pages/users');
 });
 
 app.listen(3000);
