@@ -25,4 +25,13 @@ app.get('/parametres', (req, res) => {
   res.render('pages/settings');
 });
 
+
+app.get('/home', (req, res) => {
+  res.render('pages/home');
+});
+
+app.get('/residences', (req, res) => {
+  res.render('pages/houses');
+});
+
 app.listen(3000);
