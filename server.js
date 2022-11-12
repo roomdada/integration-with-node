@@ -34,4 +34,17 @@ app.get('/residences', (req, res) => {
   res.render('pages/houses');
 });
 
+
+app.get('/transactions', (req, res) => {
+  res.render('pages/transaction');
+});
+
+app.get('/owner-users', (req, res) => {
+  res.render('pages/owner-users');
+});
+
+app.get('/bookings', (req, res) => {
+  res.render('pages/booking');
+});
+
 app.listen(3000);
