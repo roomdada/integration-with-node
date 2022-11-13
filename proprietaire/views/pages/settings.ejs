@@ -31,7 +31,7 @@
       <div class="absolute top-0 right-0 -mr-12 pt-2">
         <button type="button"
           class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-          <span class="sr-only">Close sidebar</span>
+          <span class="sr-only">Fermer</span>
           <!-- Heroicon name: outline/x -->
           <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" aria-hidden="true">
@@ -44,7 +44,6 @@
         <img class="h-8 w-auto" src="images/logo.jpg" alt="Logo">
       </div>
       <%- include('shared/owner-navbar') %>
-
     </div>
 
     <div class="flex-shrink-0 w-14" aria-hidden="true">
@@ -69,7 +68,7 @@
     <div class="relative z-10 flex-shrink-0 flex h-16 bg-white border-b border-gray-200 lg:border-none">
       <button type="button"
         class="px-4 border-r border-gray-200 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500 lg:hidden">
-        <span class="sr-only">Open sidebar</span>
+        <span class="sr-only">Ouvrir</span>
         <!-- Heroicon name: outline/menu-alt-1 -->
         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
           aria-hidden="true">
@@ -220,16 +219,18 @@
                                   <h3 class="text-lg leading-6 font-medium text-gray-900">Listes des differents moyens de paiement</h3>
                                   <p class="max-w-2xl text-sm text-gray-500">Les differents moyens de trasactions</p>
                                  </div>
-                                 <button
+                                 <button  data-modal-toggle="addMethod"
                                  class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                 type="button" data-modal-toggle="defaultModal">
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                                 type="button" >
+                                 <svg   xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
                                </button>
                  
+                               <%- include('modals/create-paiement') %>
 
                               </div>
                               <div class="mt-6">
                                 <%- include('shared/paiement-list') %>
+
                               </div>
                             </div>
 
@@ -240,13 +241,14 @@
                                   <div class="space-y-1">
                                    <h3 class="text-lg leading-6 font-medium text-gray-900">Listes des differentes Categorie</h3>
                                   </div>
-                                  <button
-                                  class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                  type="button" data-modal-toggle="defaultModal">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
-                                </button>
-                  
- 
+                                  <button  
+                                 class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                 type="button" >
+                                 <svg   xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                               </button>
+      
+
+                               
                                </div>
                               </div>
                               <div class="mt-6">
@@ -261,12 +263,17 @@
                                   <div class="space-y-1">
                                    <h3 class="text-lg leading-6 font-medium text-gray-900">Listes des documents</h3>
                                   </div>
-                                  <button
-                                  class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                  type="button" data-modal-toggle="defaultModal">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
-                                </button>
-                  
+                                  <div>
+                                    <%- include('modals/create-category') %>
+
+                                    <button data-modal-toggle="addCat"
+                                    class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                    type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                                  </button>
+                                  </div>
+
+                                                  
  
                                </div>
                               </div>
@@ -284,7 +291,7 @@
                                   </div>
                                   <button
                                   class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                  type="button" data-modal-toggle="defaultModal">
+                                  type="button">
                                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
                                 </button>
                   
@@ -313,7 +320,8 @@
   </div>
   </div>
 
-  <%- include('modals/create-user') %>
+
+
 
 </body>
 
